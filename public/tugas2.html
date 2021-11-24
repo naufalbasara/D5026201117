@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Naufal Rafiawan Basara</title>
+    <link rel="icon" href="assets/img/logo rb.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        * {
+            top: 0;
+            margin: 0;
+            box-sizing: border-box;
+            color: rgba(rgb(0, 253, 169), rgb(17, 46, 17), rgb(24, 24, 48), 1);
+            font-family: 'Overpass', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #3b3b3b;
+        }
+
+        ::-webkit-scrollbar-track:hover {
+            background: grey;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #3b3b3b;
+            border-radius: 10px
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        main {
+            min-height: 100vh;
+            background-color: #00f790;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* main body dashboard glass effect */
+        main .dashboard {
+            width: 60%;
+            min-height: 80vh;
+
+            background-image: linear-gradient(to right bottom,
+                    rgba(255, 255, 255, 0.7),
+                    rgba(255, 255, 255, 0.3));
+
+            border-radius: 2rem;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            display: flex;
+            z-index: 9;
+        }
+
+        main .dashboard p {
+            font-size: 15px;
+        }
+
+        /* left section */
+        .left.profile {
+            background-image: linear-gradient(to right bottom,
+                    rgba(255, 255, 255, 0.7),
+                    rgba(255, 255, 255, 0.3));
+            border-radius: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .left.profile .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .left.profile .links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left.profile .links .link {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .left.profile .links .link p {
+            margin: 10px;
+        }
+
+        .left.profile .links .link img {
+            margin: 10px;
+        }
+
+        .left.profile .links .link.linked #linked::after {
+            content: url("open_in_new_black_24dp.svg");
+        }
+
+        .left.profile .personal-website {
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-image: linear-gradient(to right, #19e3a0, #0ee351);
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+
+        .left.profile .personal-website:hover {
+            box-shadow: 0px 0px 5px 1px black;
+        }
+
+        /* right section */
+        .right.desc {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: space-around;
+            margin: 0 10px;
+        }
+
+        .right.desc .summary h2 {
+            background: -webkit-linear-gradient(#19e3a0, #0ee351);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: 2px solid #0ee351;
+        }
+
+        .right.desc .experience .xp {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 850px) {
+            main .dashboard {
+                width: 60%;
+                min-height: 80vh;
+
+                background-image: linear-gradient(to right bottom,
+                        rgba(255, 255, 255, 0.7),
+                        rgba(255, 255, 255, 0.3));
+
+                border-radius: 2rem;
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                display: flex;
+                flex-direction: column;
+                z-index: 1;
+            }
+        }
+
+        /* img section */
+        .info img {
+            height: 150px;
+            width: 75px;
+        }
+
+        .links img {
+            max-height: 24px;
+            max-width: 24px;
+        }
+
+
+        /* decoration */
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            position: absolute;
+            color: #00f790;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            color: #00f790;
+        }
+
+        .three {
+            top: 475px;
+            right: 205px;
+            background-image: linear-gradient(to right bottom,
+                    rgba(255, 255, 255, 0.7),
+                    rgba(255, 255, 255, 0.3));
+        }
+
+        .four {
+            top: 50px;
+            left: 150px;
+            background-image: linear-gradient(to right bottom,
+                    rgba(255, 255, 255, 0.7),
+                    rgba(255, 255, 255, 0.3));
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="dashboard">
+            <section class="left profile">
+                <div class="info">
+                    <img src="assets/img/foto diri.png" alt="Naufal Basara" width="100px">
+                    <h2>Naufal Rafiawan Basara</h2>
+                    <b>
+                        <p>Information Systems Student</p>
+                    </b>
+                </div>
+
+                <div class="links">
+                    <div class="link">
+                        <img src="assets/img/place_black_24dp.svg" alt="place">
+                        <span>Bandung</span>
+                    </div>
+                    <div class="link">
+                        <img src="assets/img/call_black_24dp.svg" alt="call">
+                        <span>+62 8156039555</span>
+                    </div>
+                    <div class="link">
+                        <img src="assets/img/email_black_24dp.svg" alt="email">
+                        <span>naufalbasara@outlook.com</span>
+                    </div>
+                    <div class="link linked">
+                        <img src="assets/img/linkedin.png" alt="LinkedIn">
+                        <span id="linked">Naufal Rafiawan Basara</span>
+                    </div>
+                </div>
+
+                <div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253497.13516734913!2d107.50307079265457!3d-6.90342901505421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Kota%20Bandung%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1631022346909!5m2!1sid!2sid"
+                        width="90%" height="90%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <a class="personal-website" href="https://naufalbasara.github.io/personal-website.github.io"
+                    target="_blank">Go to Website!</a>
+            </section>
+
+            <section class="right desc">
+                <h2>Summary</h2>
+
+                <div class="self-description">
+                    <h3>Profile</h3>
+                    <p>I am a hard-working and highly dedicated person. I will always try to learn from my mistakes i
+                        have made in the past.
+                        <br>I currently a second year Information Systems student at Institut Teknologi Sepuluh
+                        Nopember, Surabaya.
+                    </p>
+                </div>
+
+                <div class="experience">
+                    <h3>Organizational Experience</h3>
+                    <ul>
+                        <li>
+                            <div class="xp">
+                                <h4>Staff of Sponsorship Division</h4>
+                                <p>Information Systems Expo! 2021</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="xp">
+                                <h4>Staff of IT Division in Bandung Regional Forum</h4>
+                                <p>ILITS (INI LHO ITS) 2021</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="xp">
+                                <h4>Vice Head Event Executive, Staff of Logistic Division</h4>
+                                <p>TDOA (The Day of Art) 2019</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skills">
+                    <h3>Tech Stack</h3>
+                    <figure class="tech-stack">
+                        <img src="assets/img/html.png" alt="html5">
+                        <img src="assets/img/css-3.png" alt="css3">
+                        <img src="assets/img/javascript.png" alt="" javascript>
+                        <img src="assets/img/python.png" alt="python">
+                        <img src="assets/img/java.png" alt="java">
+                    </figure>
+                </div>
+            </section>
+
+            
+        </section>
+            <div class="circle three"></div>
+            <div class="circle four"></div>
+    </main>
+</body>
+
+</html>
