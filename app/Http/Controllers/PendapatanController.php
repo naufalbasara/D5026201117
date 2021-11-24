@@ -57,7 +57,7 @@ class PendapatanController extends Controller
     public function update(Request $request)
     {
         // update data pendapatan
-        DB::table('pendapatan')->where('ID',$request->id)->update([
+        DB::table('pendapatan')->where('ID',$request->ID)->update([
             'IDPegawai' => $request->IDPegawai,
             'Bulan' => $request->Bulan,
             'Tahun' => $request->Tahun,
