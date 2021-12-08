@@ -1,13 +1,8 @@
-@extends('layout.happy')
-@section('title', 'Data Absen')
-@section('judulhalaman', 'DATA ABSEN')
+@extends('layout.template')
+@section('title', 'Tambah Data Absen')
 
-@section('konten')
-    <a href="/absen"> Kembali</a>
-
-    <br />
-    <br />
-
+@section('content')
+    <a href="/absen" class="btn btn-md btn-primary mb-3 mt-3"> Kembali</a>
     <form action="/absen/store" method="post">
         {{ csrf_field() }}
         <div class="container">
@@ -56,7 +51,7 @@
         <label for="h">HADIR</label><br>
         <input type="radio" id="a" name="status" value="A" checked="checked">
         <label for="a">TIDAK HADIR</label><br>
-        <input type="submit" value="Simpan Data">
+        <button type="submit" class="btn btn-md btn-success">Simpan Data</button>
     </form>
 @endsection
 

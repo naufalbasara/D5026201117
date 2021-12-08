@@ -1,3 +1,5 @@
+@extends('layout.template')
+@section('title', 'Edit Data Pendapatan')
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +12,11 @@
 	<title>Tugas Pemrograman Web CRUD Laravel MYSQL</title>
 </head>
 <body>
-
+    @section('content')
 	<h2>Naufal Rafiawan Basara</h2>
 	<h3>Data Pendapatan</h3>
 
-	<a href="/pendapatan/tambah" class="btn btn-lg btn-success"> + Tambah Data Pendapatan Baru</a>
-
-	<br/>
-	<br/>
+	<a href="/pendapatan/tambah" class="btn btn-md btn-success"> + Tambah Data Pendapatan Baru</a>
 
 	<table border="1" class="table">
 		<tr>
@@ -35,14 +34,14 @@
 			<td>{{ $p->Gaji }}</td>
 			<td>{{ $p->Tunjangan }}</td>
 			<td>
-				<a href="/pendapatan/edit/{{ $p->ID }}">Edit</a>
+				<a href="/pendapatan/edit/{{ $p->ID }}" class="btn btn-md btn-primary">Edit</a>
 				|
-				<a href="/pendapatan/hapus/{{ $p->ID }}">Hapus</a>
+				<a href="/pendapatan/hapus/{{ $p->ID }}"class="btn btn-md btn-danger">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-
+    @endsection
 
 </body>
 </html>

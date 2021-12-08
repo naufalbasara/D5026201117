@@ -35,7 +35,9 @@
             {{-- body --}}
             <div class="offcanvas-body bg-dark">
                 <img src="layout-assets/img/3x4.jpg" class="rounded mx-auto d-block" alt="..." height="300px">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                {{-- navlinks --}}
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
                     <a class="nav-link active text-light" aria-current="page" href="/">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house text-light" viewBox="0 0 16 16">
@@ -85,13 +87,18 @@
                     Tugas
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                    <li><a class="dropdown-item" href="#">ETS</a></li>
+                    <li><a class="dropdown-item" href="/ets2021">ETS</a></li>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
                   </ul>
                 </li>
               </ul>
+
+              {{-- footer --}}
+              <div class="container">
+
+              </div>
             </div>
 
           </div>

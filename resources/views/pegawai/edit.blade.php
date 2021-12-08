@@ -1,17 +1,14 @@
+@extends('layout.template')
+@section('title', 'Edit Data Pegawai')
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
 </head>
 <body>
-
-	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
+    @section('content')
 	<h3>Edit Pegawai</h3>
-
-	<a href="/pegawai"> Kembali</a>
-
-	<br/>
-	<br/>
+	<a href="/pegawai" class="btn btn-md btn-primary"> Kembali</a>
 
 	@foreach($pegawai as $p)
 	<form action="/pegawai/update" method="post">
@@ -21,10 +18,12 @@
 		Jabatan <input type="text" required="required" name="jabatan" value="{{ $p->pegawai_jabatan }}"> <br/>
 		Umur <input type="number" required="required" name="umur" value="{{ $p->pegawai_umur }}"> <br/>
 		Alamat <textarea required="required" name="alamat">{{ $p->pegawai_alamat }}</textarea> <br/>
-		<input type="submit" value="Simpan Data">
+        <button type="submit" class="btn btn-md btn-success">Simpan Data</button>
+
 	</form>
 	@endforeach
 
+    @endsection
 
 </body>
 </html>

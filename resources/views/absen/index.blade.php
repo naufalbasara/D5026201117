@@ -1,21 +1,16 @@
 @extends('layout.template')
-@section('title', 'Home')
-@section('judulhalaman', 'Home')
+@section('title', 'Data Absen')
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
 <body>
     @section('content')
 	<h3>Data Absen</h3>
 
-	<a href="/absen/tambah"> + Tambah Absen Baru</a>
+	<a href="/absen/tambah" class="btn btn-md btn-success"> + Tambah Absen Baru</a>
 
 	<br/>
 	<br/>
 
-	<table border="1">
+	<table border="1" class="table">
 		<tr>
 			<th>ID Pegawai</th>
 			<th>Tanggal</th>
@@ -28,9 +23,9 @@
 			<td>{{ $a->Tanggal }}</td>
 			<td>{{ $a->Status }}</td>
 			<td>
-				<a href="/absen/edit/{{ $a->ID}}">Edit</a>
+				<a href="/absen/edit/{{ $a->ID}}" class="btn btn-md btn-primary">Edit</a>
 				|
-				<a href="/absen/hapus/{{ $a->ID}}">Hapus</a>
+				<a href="/absen/hapus/{{ $a->ID}}" class="btn btn-md btn-danger">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
