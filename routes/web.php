@@ -28,6 +28,7 @@ Route::post('sayhi',"ViewController@sayHi");
 
 // pegawai
 Route::get('/pegawai','PegawaiController@index');
+Route::get('/pegawai/cari','PegawaiController@cari');
 Route::get('/pegawai/tambah','PegawaiController@tambah');
 Route::post('/pegawai/store','PegawaiController@store');
 Route::get('/pegawai/edit/{id}','PegawaiController@edit');
@@ -49,6 +50,14 @@ Route::post('/absen/store','AbsenController@store');
 Route::get('/absen/edit/{id}','AbsenController@edit');
 Route::post('/absen/update','AbsenController@update');
 Route::get('/absen/hapus/{id}','AbsenController@hapus');
+
+// Merk Kertas HVS
+Route::get('/merkkertashvs','KertasController@index');
+Route::get('/merkkertashvs/tambah','KertasController@tambah');
+Route::post('/merkkertashvs/store','KertasController@store');
+Route::get('/merkkertashvs/edit/{id}','KertasController@edit');
+Route::post('/merkkertashvs/update','KertasController@update');
+Route::get('/merkkertashvs/hapus/{id}','KertasController@hapus');
 
 // layout
 Route::get('/layout','LayoutController@index');
