@@ -1,12 +1,13 @@
 @extends('layout.template')
-@section('title', 'Data Pegawai')
+@section('title', 'Detail Data Pegawai')
 <!DOCTYPE html>
 <html>
 <body>
     @section('content')
-	<h3>Data Pegawai</h3>
+	<h3>Detail Data Pegawai</h3>
 
-	<a href="/pegawai/tambah" class="btn btn-md btn-success mb-3"> + Tambah Pegawai Baru</a>
+    <a href="/pegawai" class="btn btn-md btn-primary"> Kembali</a>
+
 
     <form action="/pegawai/cari" method="GET" class="row mb-3">
         <div class="col-3">
@@ -23,15 +24,19 @@
 		<tr>
 			<th>Nama</th>
 			<th>Jabatan</th>
+			<th>Umur</th>
+			<th>Alamat</th>
 			<th>Opsi</th>
 		</tr>
 		@foreach($pegawai as $p)
 		<tr>
+		{{ csrf_field() }}
+
 			<td>{{ $p->pegawai_nama }}</td>
 			<td>{{ $p->pegawai_jabatan }}</td>
+			<td>{{ $p->pegawai_umur }}</td>
+			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
-                <a href="/pegawai/detail/{{ $p->pegawai_id }}" class="btn btn-md btn-info mb-3">View Details</a>
-				|
 				<a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-md btn-primary mb-3">Edit</a>
 				|
 				<a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-md btn-danger mb-3">Hapus</a>
@@ -39,7 +44,6 @@
 		</tr>
 		@endforeach
 	</table>
-    {{ $pegawai->links()  }}
     @endsection
 </body>
 </html>
