@@ -30,7 +30,7 @@
 		</tr>
 		@endforeach
 	</table>
-
+    {{ $absen->links()  }}
     @endsection
 </body>
 </html>

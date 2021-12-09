@@ -13,7 +13,6 @@
 </head>
 <body>
     @section('content')
-	<h2>Naufal Rafiawan Basara</h2>
 	<h3>Data Pendapatan</h3>
 
 	<a href="/pendapatan/tambah" class="btn btn-md btn-success"> + Tambah Data Pendapatan Baru</a>
@@ -41,6 +40,7 @@
 		</tr>
 		@endforeach
 	</table>
+    {{ $pendapatan->links()  }}
     @endsection
 
 </body>

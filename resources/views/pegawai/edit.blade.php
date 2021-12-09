@@ -2,9 +2,6 @@
 @section('title', 'Edit Data Pegawai')
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
 <body>
     @section('content')
 	<h3>Edit Pegawai</h3>

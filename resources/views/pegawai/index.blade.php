@@ -1,7 +1,5 @@
 @extends('layout.template')
 @section('title', 'Edit Data Absen')
-
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -32,7 +30,7 @@
 		</tr>
 		@endforeach
 	</table>
-
+    {{ $pegawai->links()  }}
     @endsection
 </body>
 </html>
