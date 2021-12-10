@@ -38,6 +38,7 @@ Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
 
 // pendapatan pegawai
 Route::get('/pendapatan','PendapatanController@index');
+Route::get('/pendapatan/cari','PendapatanController@cari');
 Route::get('/pendapatan/tambah','PendapatanController@tambah');
 Route::post('/pendapatan/store','PendapatanController@store');
 Route::get('/pendapatan/edit/{id}','PendapatanController@edit');
@@ -46,6 +47,7 @@ Route::get('/pendapatan/hapus/{id}','PendapatanController@hapus');
 
 // absen pegawai
 Route::get('/absen','AbsenController@index');
+Route::get('/absen/cari','AbsenController@cari');
 Route::get('/absen/tambah','AbsenController@tambah');
 Route::post('/absen/store','AbsenController@store');
 Route::get('/absen/edit/{id}','AbsenController@edit');

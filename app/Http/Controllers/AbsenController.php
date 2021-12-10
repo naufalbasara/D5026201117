@@ -11,12 +11,28 @@ class AbsenController extends Controller
     public function index()
     {
     	// mengambil data dari table absen
-    	$absen = DB::table('absen')->paginate(5);
+        $absen = DB::table('absen')
+            ->join('pegawai', 'absen.IDPegawai', '=', 'pegawai.pegawai_id')
+            ->paginate(5);
 
     	// mengirim data absen ke view index
     	return view('absen.index',['absen' => $absen]);
 
     }
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+    	// mengambil data dari table pegawai sesuai pencarian data
+        $absen = DB::table('absen')
+            ->join('pegawai', 'absen.IDPegawai', '=', 'pegawai.pegawai_id')
+            ->where('pegawai_nama','like',"%".$cari."%")
+            ->paginate(5);
+
+    	// mengirim data pegawai ke view index
+		return view('absen.index',['absen' => $absen]);
+	}
 
 // method untuk menampilkan view form tambah absen
 public function tambah()
@@ -48,12 +64,13 @@ public function edit($id)
 	// mengambil data absen berdasarkan id yang dipilih
 	$absen = DB::table('absen')->where('ID',$id)->get();
 
-    $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
-
-    $status = "Sedang Mengedit" ;
+    $pegawai = DB::table('absen')
+    ->join('pegawai', 'absen.IDPegawai', '=', 'pegawai.pegawai_id')
+    ->where('ID', $id)
+    ->get();
 
 	// passing data absen yang didapat ke view edit.blade.php
-	return view('absen.edit',['absen' => $absen,'pegawai' => $pegawai,'status' => $status]);
+	return view('absen.edit',['absen' => $absen,'pegawai' => $pegawai]);
 
 }
 
@@ -65,7 +82,7 @@ public function update(Request $request)
 	DB::table('absen')->where('ID',$request->id)->update([
 		'IDPegawai' => $request->idpegawai,
 		'Tanggal' => $request->tanggal,
-		'Status' => $request->status
+		'Status' => $request->Status
 	]);
 	// alihkan halaman ke halaman awal
 	return redirect('/absen');

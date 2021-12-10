@@ -23,12 +23,12 @@ class PegawaiController extends Controller
 		// menangkap data pencarian
 		$cari = $request->cari;
 
-    		// mengambil data dari table pegawai sesuai pencarian data
+    	// mengambil data dari table pegawai sesuai pencarian data
 		$pegawai = DB::table('pegawai')
 		->where('pegawai_nama','like',"%".$cari."%")
 		->paginate(5);
 
-    		// mengirim data pegawai ke view index
+    	// mengirim data pegawai ke view index
 		return view('pegawai.index',['pegawai' => $pegawai]);
 	}
 

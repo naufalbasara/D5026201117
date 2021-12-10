@@ -11,19 +11,37 @@ class PendapatanController extends Controller
     public function index()
     {
     	// mengambil data dari table pendapatan
-    	$pendapatan = DB::table('pendapatan')->paginate(5);
+    	$pendapatan = DB::table('pendapatan')
+        ->join('pegawai', 'pendapatan.IDPegawai', '=', 'pegawai.pegawai_id')
+        ->paginate(5);
 
     	// mengirim data pendapatan ke view index
     	return view('pendapatan.index',['pendapatan' => $pendapatan]);
 
     }
 
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+    	// mengambil data dari table pegawai sesuai pencarian data
+		$pendapatan = DB::table('pendapatan')
+        ->join('pegawai', 'pendapatan.IDPegawai', '=', 'pegawai.pegawai_id')
+		->where('pegawai_nama','like',"%".$cari."%")
+		->paginate(5);
+
+    	// mengirim data pegawai ke view index
+		return view('pendapatan.index',['pendapatan' => $pendapatan]);
+	}
+
     // method untuk menampilkan view form tambah pendapatan
     public function tambah()
     {
 
+        $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
         // memanggil view tambah
-        return view('pendapatan.tambah');
+        return view('pendapatan.tambah', ['pegawai' => $pegawai]);
 
     }
 
@@ -48,9 +66,12 @@ class PendapatanController extends Controller
     {
         // mengambil data pendapatan berdasarkan id yang dipilih
         $pendapatan = DB::table('pendapatan')->where('ID',$id)->get();
+        $pegawai = DB::table('pendapatan')
+        ->join('pegawai', 'pendapatan.IDPegawai', '=', 'pegawai.pegawai_id')
+		->where('ID', $id)
+		->get();
         // passing data pendapatan yang didapat ke view edit.blade.php
-        return view('pendapatan.edit',['pendapatan' => $pendapatan]);
-
+        return view('pendapatan.edit',['pendapatan' => $pendapatan],['pegawai' => $pegawai]);
     }
 
     // update data pendapatan

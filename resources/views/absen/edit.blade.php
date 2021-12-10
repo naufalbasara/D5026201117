@@ -3,7 +3,7 @@
 
 @section('content')
     <a href="/absen"class="btn btn-md btn-primary mb-3 mt-3"> Kembali</a>
-    <form action="/absen/store" method="post">
+    <form action="/absen/update" method="post">
         {{ csrf_field() }}
         <div class="container">
 
@@ -49,8 +49,10 @@
         Status
         <input type="radio" id="h" name="status" value="H">
         <label for="h">HADIR</label><br>
+
         <input type="radio" id="a" name="status" value="A" checked="checked">
         <label for="a">TIDAK HADIR</label><br>
+
         <button type="submit" class="btn btn-md btn-success">Simpan Data</button>
     </form>
 @endsection
