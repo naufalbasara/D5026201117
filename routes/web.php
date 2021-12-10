@@ -56,6 +56,8 @@ Route::get('/absen/hapus/{id}','AbsenController@hapus');
 
 // Merk Kertas HVS
 Route::get('/merkkertashvs','KertasController@index');
+Route::get('/merkkertashvs/cari','KertasController@cari');
+Route::get('/merkkertashvs/detail/{id}','KertasController@view');
 Route::get('/merkkertashvs/tambah','KertasController@tambah');
 Route::post('/merkkertashvs/store','KertasController@store');
 Route::get('/merkkertashvs/edit/{id}','KertasController@edit');

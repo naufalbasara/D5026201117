@@ -3,10 +3,12 @@
 
 @section('content')
     <a href="/absen"class="btn btn-md btn-primary mb-3 mt-3"> Kembali</a>
+
+    @foreach($absen as $a)
     <form action="/absen/update" method="post">
         {{ csrf_field() }}
         <div class="container">
-
+            <input type="hidden" value="{{ $a->ID }}" name="ID">
             <div class="row">
                 <div class='col-lg-9'>
                     <div class="form-group">
@@ -28,7 +30,7 @@
                     <div class="form-group">
                         <label for="dtpickerdemo" class="col-sm-2 control-label">Tanggal :</label>
                         <div class='col-sm-4 input-group date' id='dtpickerdemo'>
-                            <input type='text' class="form-control" name="tanggal" required="required" />
+                            <input type='text' class="form-control" name="tanggal" required="required" value="{{ $a->Tanggal }}"/>
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -55,5 +57,6 @@
 
         <button type="submit" class="btn btn-md btn-success">Simpan Data</button>
     </form>
+    @endforeach
 @endsection
 

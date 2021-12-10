@@ -75,14 +75,14 @@ public function edit($id)
 }
 
 
-// update data pegawai
+// update data absen
 public function update(Request $request)
 {
 	// update data absen
-	DB::table('absen')->where('ID',$request->id)->update([
+	DB::table('absen')->where('ID',$request->ID)->update([
 		'IDPegawai' => $request->idpegawai,
 		'Tanggal' => $request->tanggal,
-		'Status' => $request->Status
+		'Status' => $request->status
 	]);
 	// alihkan halaman ke halaman awal
 	return redirect('/absen');
