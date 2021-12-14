@@ -88,13 +88,13 @@
                 </div>
 
                 <div class="links">
-                    <a href="tugas1.html">Tugas 1</a>
-                    <a href="tugas2.html">Tugas 2</a>
-                    <a href="tugas3.html">Tugas 3</a>
-                    <a href="">Praktikum 1</a>
-                    <a href="tugas4">Tugas 4</a>
-                    <a href="">Praktikum 2</a>
-                    <a href="ets2021">ETS</a>
+                    <a href="tugasHTML">Tugas 1</a>
+                    <a href="tugasHTML-CSS">Tugas 2</a>
+                    <a href="tugasBootstrap">Tugas 3</a>
+                    <a href="praktikumBootstrap">Praktikum 1</a>
+                    <a href="tugasJS">Tugas 4</a>
+                    <a href="praktikumJS">Praktikum 2</a>
+                    <a href="/ets2021">ETS</a>
                     <a href="greetings">Tugas PHP</a>
                 </div>
             </div>

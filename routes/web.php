@@ -22,6 +22,12 @@ Route::get('tugas4', function () {
 
 // through controller
 Route::get('ets2021',"ViewController@showETS");
+Route::get('tugasJS',"ViewController@showTugasJS");
+Route::get('tugasHTML',"ViewController@showTugasHTML");
+Route::get('tugasHTML-CSS',"ViewController@showTugasHTMLCSS");
+Route::get('tugasBootstrap',"ViewController@showTugasBootstrap");
+Route::get('praktikumBootstrap',"ViewController@showPraktikumBootstrap");
+Route::get('praktikumJS',"ViewController@showPraktikumJS");
 
 Route::get('greetings',"ViewController@showGreetings");
 Route::post('sayhi',"ViewController@sayHi");
@@ -39,6 +45,7 @@ Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
 // pendapatan pegawai
 Route::get('/pendapatan','PendapatanController@index');
 Route::get('/pendapatan/cari','PendapatanController@cari');
+Route::get('/pendapatan/detail/{id}','PendapatanController@view');
 Route::get('/pendapatan/tambah','PendapatanController@tambah');
 Route::post('/pendapatan/store','PendapatanController@store');
 Route::get('/pendapatan/edit/{id}','PendapatanController@edit');
@@ -48,6 +55,7 @@ Route::get('/pendapatan/hapus/{id}','PendapatanController@hapus');
 // absen pegawai
 Route::get('/absen','AbsenController@index');
 Route::get('/absen/cari','AbsenController@cari');
+Route::get('/absen/detail/{id}','AbsenController@view');
 Route::get('/absen/tambah','AbsenController@tambah');
 Route::post('/absen/store','AbsenController@store');
 Route::get('/absen/edit/{id}','AbsenController@edit');

@@ -23,15 +23,15 @@
 		<tr>
 			<th>Nama Pegawai</th>
 			<th>Tanggal</th>
-			<th>Status</th>
 			<th>Opsi</th>
 		</tr>
 		@foreach($absen as $a)
 		<tr>
 			<td>{{ $a->pegawai_nama }}</td>
 			<td>{{ $a->Tanggal }}</td>
-			<td>{{ $a->Status }}</td>
 			<td>
+				<a href="/absen/detail/{{ $a->ID}}" class="btn btn-md btn-info">View Details</a>
+                |
 				<a href="/absen/edit/{{ $a->ID}}" class="btn btn-md btn-primary">Edit</a>
 				|
 				<a href="/absen/hapus/{{ $a->ID}}" class="btn btn-md btn-danger">Hapus</a>

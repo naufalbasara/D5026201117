@@ -35,6 +35,17 @@ class PendapatanController extends Controller
 		return view('pendapatan.index',['pendapatan' => $pendapatan]);
 	}
 
+    public function view($id)
+    {
+        // mengambil data pegawai berdasarkan id yang dipilih
+        $pendapatan = DB::table('pendapatan')
+            ->join('pegawai', 'pendapatan.IDPegawai', '=', 'pegawai.pegawai_id')
+            ->where('ID',$id)->get();
+        // passing data pendapatan yang didapat ke view edit.blade.php
+        return view('pendapatan.detail',['pendapatan' => $pendapatan]);
+
+    }
+
     // method untuk menampilkan view form tambah pendapatan
     public function tambah()
     {

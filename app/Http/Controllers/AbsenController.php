@@ -34,6 +34,17 @@ class AbsenController extends Controller
 		return view('absen.index',['absen' => $absen]);
 	}
 
+    public function view($id)
+    {
+        // mengambil data pegawai berdasarkan id yang dipilih
+        $absen = DB::table('absen')
+            ->join('pegawai', 'absen.IDPegawai', '=', 'pegawai.pegawai_id')
+            ->where('ID',$id)->get();
+        // passing data absen yang didapat ke view edit.blade.php
+        return view('absen.detail',['absen' => $absen]);
+
+    }
+
 // method untuk menampilkan view form tambah absen
 public function tambah()
 {

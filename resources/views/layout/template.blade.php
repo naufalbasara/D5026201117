@@ -89,11 +89,11 @@
                     Tugas
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                    <li><a class="dropdown-item" href="/">HTML</a></li>
-                    <li><a class="dropdown-item" href="/">HTML & CSS</a></li>
-                    <li><a class="dropdown-item" href="/">Bootstrap</a></li>
-                    <li><a class="dropdown-item" href="/">Javascript</a></li>
-                    <li><a class="dropdown-item" href="/ets2021">ETS</a></li>
+                    <li><a class="dropdown-item" href="tugasHTML">HTML</a></li>
+                    <li><a class="dropdown-item" href="tugasHTML-CSS">HTML & CSS</a></li>
+                    <li><a class="dropdown-item" href="tugasBootstrap">Bootstrap</a></li>
+                    <li><a class="dropdown-item" href="tugasJS">Javascript</a></li>
+                    <li><a class="dropdown-item" href="ets2021">ETS</a></li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown">

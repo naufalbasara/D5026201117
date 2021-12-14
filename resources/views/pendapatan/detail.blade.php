@@ -1,5 +1,5 @@
 @extends('layout.template')
-@section('title', 'Data Pendapatan')
+@section('title', 'Detail Data Pendapatan')
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +9,13 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 </head>
 <body>
     @section('content')
 	<h3>Data Pendapatan</h3>
 
-	<a href="/pendapatan/tambah" class="btn btn-md btn-success"> + Tambah Data Pendapatan Baru</a>
+	<a href="/pendapatan" class="btn btn-md btn-primary">Kembali</a>
     <form action="/pendapatan/cari" method="GET" class="row mb-3">
         <div class="col-5">
             <div class="input-group mt-3">
@@ -32,15 +33,17 @@
 			<th>Nama Pegawai</th>
 			<th>Bulan</th>
 			<th>Tahun</th>
+			<th>Gaji</th>
+			<th>Tunjangan</th>
 		</tr>
 		@foreach($pendapatan as $p)
 		<tr>
 			<td>{{ $p->pegawai_nama }}</td>
 			<td>{{ $p->Bulan }}</td>
 			<td>{{ $p->Tahun }}</td>
+			<td>{{ $p->Gaji }}</td>
+			<td>{{ $p->Tunjangan }}</td>
 			<td>
-				<a href="/pendapatan/detail/{{ $p->ID }}" class="btn btn-md btn-info">View Details</a>
-                |
 				<a href="/pendapatan/edit/{{ $p->ID }}" class="btn btn-md btn-primary">Edit</a>
 				|
 				<a href="/pendapatan/hapus/{{ $p->ID }}"class="btn btn-md btn-danger">Hapus</a>
@@ -48,7 +51,6 @@
 		</tr>
 		@endforeach
 	</table>
-    {{ $pendapatan->links()  }}
     @endsection
 
 </body>
