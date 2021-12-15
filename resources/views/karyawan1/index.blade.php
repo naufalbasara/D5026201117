@@ -33,7 +33,7 @@
 			<td>{{ $k->Pangkat }}</td>
 			<td>Rp{{ number_format($k->Gaji) }}</td>
 			<td>
-				<a href="/karyawan1/edit/{{ $k->NIP}}" class="btn btn-md btn-primary">Edit</a>
+				<a href="/karyawan1/tambah" class="btn btn-md btn-success">Tambah</a>
 				|
 				<a href="/karyawan1/hapus/{{ $k->NIP}}" class="btn btn-md btn-danger">Hapus</a>
 			</td>

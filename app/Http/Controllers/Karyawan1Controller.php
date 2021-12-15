@@ -67,10 +67,10 @@ public function edit($id)
 }
 
 
-// update data absen
+// update data karyawan
 public function update(Request $request)
 {
-	// update data absen
+	// update data karyawan
 	DB::table('karyawan1')->where('NIP',$request->NIP)->update([
 		'NIP' => $request->NIP,
 		'Nama' => $request->Nama,
@@ -81,13 +81,13 @@ public function update(Request $request)
 	return redirect('/karyawan1');
 }
 
-// method untuk hapus data pegawai
+// method untuk hapus data karyawan
 public function hapus($id)
 {
-	// menghapus data pegawai berdasarkan id yang dipilih
+	// menghapus data karyawan berdasarkan id yang dipilih
 	DB::table('karyawan1')->where('NIP',$id)->delete();
 
-	// alihkan halaman ke halaman pegawai
+	// alihkan halaman ke halaman karyawan
 	return redirect('/karyawan1');
 }
 
