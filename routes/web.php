@@ -72,5 +72,14 @@ Route::get('/merkkertashvs/edit/{id}','KertasController@edit');
 Route::post('/merkkertashvs/update','KertasController@update');
 Route::get('/merkkertashvs/hapus/{id}','KertasController@hapus');
 
+// Karyawan (EAS)
+Route::get('/karyawan1','Karyawan1Controller@index');
+Route::get('/karyawan1/cari','Karyawan1Controller@cari');
+Route::get('/karyawan1/tambah','Karyawan1Controller@tambah');
+Route::post('/karyawan1/store','Karyawan1Controller@store');
+Route::get('/karyawan1/edit/{id}','Karyawan1Controller@edit');
+Route::post('/karyawan1/update','Karyawan1Controller@update');
+Route::get('/karyawan1/hapus/{id}','Karyawan1Controller@hapus');
+
 // layout
 Route::get('/layout','LayoutController@index');
